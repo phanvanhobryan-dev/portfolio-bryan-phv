@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* ─── Reset ─────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { margin: 0; background: #0B0D1A; }
+a { text-decoration: none; }
+
+/* ─── Animations ─────────────────────────────────────────────────────────────── */
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+@keyframes glitch-1 {
+  0%,100% { clip-path: inset(0 0 95% 0);  transform: translateX(0); }
+  25%     { clip-path: inset(10% 0 80% 0); transform: translateX(-5px); }
+  50%     { clip-path: inset(40% 0 50% 0); transform: translateX(4px); }
+  75%     { clip-path: inset(70% 0 20% 0); transform: translateX(-3px); }
+}
+@keyframes glitch-2 {
+  0%,100% { clip-path: inset(80% 0 5% 0);  transform: translateX(0); }
+  20%     { clip-path: inset(60% 0 30% 0); transform: translateX(5px); }
+  60%     { clip-path: inset(20% 0 65% 0); transform: translateX(-4px); }
+}
+@keyframes fadeUp    { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn    { from { opacity: 0; } to { opacity: 1; } }
+@keyframes arrowBounce { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+@keyframes pulse     { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+@keyframes barGrow   { from { width: 0; } to { width: var(--w); } }
+
+/* ─── Mosaïque ───────────────────────────────────────────────────────────────── */
+.mosaic-cell {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.cell-image {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform .6s cubic-bezier(.4,0,.2,1), filter .4s ease;
+  filter: brightness(.55) saturate(.8);
+}
+.mosaic-cell:hover .cell-image {
+  transform: scale(1.06);
+  filter: brightness(.22) saturate(.35);
+}
+.mosaic-scanline {
+  position: absolute; inset: 0; z-index: 2;
+  pointer-events: none; overflow: hidden; opacity: 0;
+  transition: opacity .2s;
+}
+.mosaic-scanline::after {
+  content: ''; position: absolute; left: 0; right: 0; height: 35%;
+  background: linear-gradient(transparent, rgba(251,190,180,.07), transparent);
+  animation: scanline 1.6s linear infinite;
+}
+.mosaic-cell:hover .mosaic-scanline { opacity: 1; }
+
+.glitch-layer {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0; pointer-events: none;
+}
+.mosaic-cell:hover .glitch-layer-1 {
+  opacity: .35;
+  animation: glitch-1 .55s steps(1) infinite;
+  filter: hue-rotate(25deg) saturate(3) brightness(1.4);
+  mix-blend-mode: screen;
+}
+.mosaic-cell:hover .glitch-layer-2 {
+  opacity: .25;
+  animation: glitch-2 .8s steps(1) infinite;
+  filter: hue-rotate(-25deg) saturate(3) brightness(1.4);
+  mix-blend-mode: screen;
+}
+
+.mosaic-bottom-default {
+  transition: opacity .3s ease, transform .3s ease;
+}
+.mosaic-cell:hover .mosaic-bottom-default {
+  opacity: 0; transform: translateY(6px); pointer-events: none;
+}
+
+.mosaic-hover-content {
+  position: absolute; inset: 0; z-index: 4;
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(18px, 3vw, 28px);
+  opacity: 0; transition: opacity .35s ease; pointer-events: none;
+}
+.mosaic-cell:hover .mosaic-hover-content {
+  opacity: 1; pointer-events: auto;
+}
+
+/* ─── Carousel ───────────────────────────────────────────────────────────────── */
+.carousel-track {
+  display: flex; gap: 20px; cursor: grab; user-select: none;
+  padding-bottom: 16px; overflow-x: auto;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track.dragging { cursor: grabbing; }
+
+/* ─── Transition de page ─────────────────────────────────────────────────────── */
+.page-enter { animation: fadeIn .4s ease both; }
