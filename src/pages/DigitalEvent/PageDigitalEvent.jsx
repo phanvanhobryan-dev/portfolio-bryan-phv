@@ -13,7 +13,7 @@ const PROJECT = {
   title:    "Digital Event",
   category: "Application mobile",
   year:     "2023",
-  accent:   "#FBBEB4",
+  accent:   "#D4A574",
   role:     "Product Designer",
   team:     "5 personnes",
   duration: "4 mois",

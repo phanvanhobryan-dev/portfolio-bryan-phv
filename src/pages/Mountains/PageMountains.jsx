@@ -9,7 +9,7 @@ const PROJECT = {
   title:    "The Mountains",
   category: "Cinématique 3D",
   year:     "2023",
-  accent:   "#FBBEB4",
+  accent:   "#D4A574",
   role:     "Designer 3D",
   team:     "Solo",
   duration: "Projet académique · M2DD",

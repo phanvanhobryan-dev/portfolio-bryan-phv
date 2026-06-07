@@ -9,7 +9,7 @@ const PROJECT = {
   title:    "Le Temple du Sakura",
   category: "Cinématique 3D · Musique",
   year:     "2023",
-  accent:   "#FBBEB4",
+  accent:   "#D4A574",
   role:     "Designer 3D",
   team:     "Solo",
   duration: "Projet personnel",

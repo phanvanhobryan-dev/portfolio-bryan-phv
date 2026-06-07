@@ -13,7 +13,7 @@ const PROJECT = {
   title:    "Canal+U",
   category: "Design d'Innovation",
   year:     "2023",
-  accent:   "#FBBEB4",
+  accent:   "#D4A574",
   role:     "Lead Designer",
   team:     "20 personnes",
   duration: "2 semaines",
