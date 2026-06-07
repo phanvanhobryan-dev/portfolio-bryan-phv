@@ -113,7 +113,7 @@ export const CAROUSEL = [
     id: 13, title: "Le Temple du Sakura", category: "Cinématique 3D · Musique", year: "2023",
     image: "https://img.youtube.com/vi/pJ_CZmqbvvg/maxresdefault.jpg",
     tags: [{ label: "3D", cat: "domain" }, { label: "Motion design", cat: "domain" }, { label: "Unreal Engine 5", cat: "tool" }],
-    accent: "#D4A574",
+    accent: "#FBBEB4",
     page: "sakura",
   },
 ];
