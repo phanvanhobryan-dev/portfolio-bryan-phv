@@ -116,10 +116,4 @@ export const CAROUSEL = [
     accent: "#D4A574",
     page: "sakura",
   },
-  { id: 5, title: "Liminal", category: "Recherche UX", year: "2025", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80", tags: [{ label: "UX Research", cat: "domain" }, { label: "Stratégie", cat: "domain" }], accent: "#FBBEB4" },
-  { id: 6, title: "Kintsugi", category: "Webdesign", year: "2024", image: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=600&q=80", tags: [{ label: "Webdesign", cat: "domain" }, { label: "Webflow", cat: "tool" }], accent: "#D4A574" },
-  { id: 7, title: "Lumen", category: "Design system", year: "2026", image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80", tags: [{ label: "Design system", cat: "domain" }, { label: "Figma", cat: "tool" }], accent: "#FBBEB4" },
-  { id: 8, title: "Sansei", category: "Édition", year: "2026", image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80", tags: [{ label: "Édition", cat: "domain" }, { label: "InDesign", cat: "tool" }], accent: "#D4A574" },
-  { id: 9, title: "Mirage", category: "Portfolio", year: "2025", image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80", tags: [{ label: "Webdesign", cat: "domain" }, { label: "React", cat: "tool" }], accent: "#FBBEB4" },
-  { id: 10, title: "Helix", category: "Branding", year: "2024", image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=600&q=80", tags: [{ label: "Branding", cat: "domain" }, { label: "Illustrator", cat: "tool" }], accent: "#D4A574" },
 ];

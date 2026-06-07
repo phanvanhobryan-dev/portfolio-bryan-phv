@@ -7,6 +7,29 @@ export default function DragCarousel({ items, isMobile, navigate }) {
   const drag = useRef({ on: false, startX: 0, scrollStart: 0, vel: 0, lastX: 0 });
   const raf  = useRef(null);
 
+  // ── Mode grille pour ≤ 3 items ─────────────────────────────────────────────
+  if (items.length <= 3) {
+    const cols = isMobile ? 1 : Math.min(items.length, 3);
+    return (
+      <div style={{
+        padding: isMobile ? "0 16px" : "0 64px",
+        maxWidth: 1400,
+        margin: "0 auto",
+      }}>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(${cols}, 1fr)`,
+          gap: isMobile ? 16 : 24,
+        }}>
+          {items.map((item, i) => (
+            <CarouselCard key={item.id} item={item} index={i} isMobile={isMobile} navigate={navigate} isGrid />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // ── Mode carousel drag pour > 3 items ──────────────────────────────────────
   const down = (e) => {
     const x = e.touches?.[0]?.pageX ?? e.pageX;
     drag.current = { on: true, startX: x, scrollStart: trackRef.current.scrollLeft, vel: 0, lastX: x };
