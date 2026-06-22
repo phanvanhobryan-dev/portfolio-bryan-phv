@@ -2,8 +2,6 @@ import { useState } from "react";
 import { C, FONT_BODY, FONT_DISPLAY } from "../../constants/tokens";
 import Tag from "../../components/Tag/Tag";
 import CornerOrnaments from "../../components/CornerOrnaments/CornerOrnaments";
-import GalleryItem from "../../components/GalleryItem/GalleryItem";
-import Lightbox from "../../components/Lightbox/Lightbox";
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  DONNÉES DU PROJET
@@ -112,27 +110,11 @@ const ATELIERS = [
   },
 ];
 
-// ─── Galerie backstage ────────────────────────────────────────────────────────
-const GALLERY_IMAGES = [
-  BASE + "flipCreativeTech-Photo-2.jpg",
-  BASE + "Podcast-Photo-7.jpg",
-  BASE + "PhotoLab-Photo-1.jpg",
-  BASE + "Cinelabe-Photo-4.jpg",
-  BASE + "CreativeTech-Photo-5.jpg",
-  BASE + "Podcast-Photo-1.jpg",
-  BASE + "Cinelabe-Photo-1.jpg",
-  BASE + "PhotoLab-Photo-5.jpg",
-];
-
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function PageDigitalEvent({ isMobile, isTablet, navigate }) {
-  const [lightbox, setLightbox] = useState(null);
+  const [hoveredAtelier, setHoveredAtelier] = useState(null);
   const p = PROJECT;
-
-  const isVideo = (src) => src.endsWith(".mp4") || src.endsWith(".webm");
-  const isEmbed = (src) => src.includes("youtube.com") || src.includes("vimeo.com");
-  const isMedia = (src) => isVideo(src) || isEmbed(src);
 
   const infoRows = [
     { label: "Année",     value: p.year },
@@ -146,10 +128,6 @@ export default function PageDigitalEvent({ isMobile, isTablet, navigate }) {
 
   return (
     <main style={{ position: "relative", zIndex: 1, minHeight: "100vh" }}>
-      {lightbox !== null && (
-        <Lightbox images={GALLERY_IMAGES} startIndex={lightbox} onClose={() => setLightbox(null)} />
-      )}
-
       {/* ── HERO ── */}
       <div style={{ position: "relative", height: isMobile ? "55vh" : "70vh", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${p.image})`, backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.35) saturate(0.7)", transform: "scale(1.05)" }} />
