@@ -29,13 +29,13 @@ const PROJECT = {
   desc: "Cinématique 3D personnelle sous Unreal Engine 5 : synchronisation d'une musique avec un décor onirique asiatique. Cerisiers en fleurs, architecture traditionnelle et effets de lumière atmosphérique au rythme d'une composition musicale.",
 
   contexte:
-    "Projet personnel d'exploration créative autour de la synchronisation entre musique et image 3D. L'objectif était de construire un environnement onirique à l'esthétique asiatique — temple traditionnel, cerisiers en fleurs, brume matinale — et de faire dialoguer chaque séquence visuelle avec les temps forts de la musique choisie. Un exercice de mise en scène cinématique autant que de maîtrise technique d'UE5.",
+    "Projet personnel autour de la synchronisation entre musique et image 3D. Je voulais construire un décor onirique asiatique avec un temple traditionnel, des cerisiers en fleurs et de la brume matinale, et faire en sorte que chaque séquence visuelle réponde aux temps forts de la musique.",
 
   contribution:
-    "Conception et modélisation complète de l'environnement 3D sous Blender : architecture du temple, végétation (sakuras), éléments décoratifs. Import et mise en scène dans Unreal Engine 5 avec un travail soigné sur l'éclairage Lumen (lumières dorées de fin de journée, bloom et effets de particules pour les pétales de cerisier en mouvement). Montage cinématique synchronisé à la musique — choix des cuts, mouvements de caméra et transitions rythmées au tempo.",
+    "J'ai modélisé l'environnement complet sous Blender : temple, végétation, éléments décoratifs. Dans Unreal Engine 5, j'ai travaillé l'éclairage Lumen avec des lumières dorées de fin de journée, bloom et particules pour les pétales. Le montage cinématique a été calé sur la musique, cuts et mouvements de caméra inclus.",
 
   resultats:
-    "Cinématique aboutie mêlant direction artistique, modélisation 3D et montage musical. Le rendu final démontre une maîtrise complète du pipeline UE5 appliqué à un univers visuel fort et cohérent. Ce projet a permis d'explorer la narration visuelle sans dialogue, portée uniquement par l'image et le son.",
+    "Cinématique aboutie qui réunit direction artistique, modélisation 3D et montage musical. Le projet m'a permis d'expérimenter la narration visuelle sans dialogue, portée uniquement par l'image et le son.",
 };
 // ─────────────────────────────────────────────────────────────────────────────
 

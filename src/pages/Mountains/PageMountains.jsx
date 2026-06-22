@@ -28,13 +28,13 @@ const PROJECT = {
   desc: "Cinématique documentaire 3D sur les paysages de montagne, réalisée sous Unreal Engine 5 dans le cadre du M2DD. Pipeline complet : génération de terrain avec GAEA → rendu photoréaliste sous UE5.",
 
   contexte:
-    "Projet personnel réalisé dans le cadre du Master M2DD. L'objectif était de produire une cinématique documentaire sur les paysages de montagne en s'inspirant des cinématiques de jeux vidéo — notamment Cyberpunk 2077 et The Eye: Calanthek — et des travaux du photographe et cinéaste Denis Barbas. Le défi : recréer un environnement naturel photoréaliste intégralement en 3D, sans prise de vue réelle.",
+    "Projet réalisé dans le cadre du Master M2DD, inspiré des cinématiques de jeux vidéo comme Cyberpunk 2077 et The Eye: Calanthek, ainsi que des travaux du cinéaste Denis Barbas. Je voulais recréer un paysage montagneux photoréaliste entièrement en 3D, sans aucune prise de vue réelle.",
 
   contribution:
-    "Pipeline 3D complet maîtrisé de bout en bout. Génération du terrain haute résolution avec GAEA via une chaîne de nœuds procédurale (Igneous → FractalTerraces → Erosion → Shear), puis import dans Unreal Engine 5 pour le rendu temps réel. Travail minutieux sur l'éclairage Lumen, le fog volumétrique et la végétation pour atteindre un réalisme photographique. L'ajout d'une petite maison bleue perchée dans le décor apporte l'échelle humaine et une touche poétique au rendu final.",
+    "J'ai construit le terrain haute résolution dans GAEA avec une chaîne de nœuds procédurale, puis importé le résultat dans Unreal Engine 5. J'ai travaillé l'éclairage Lumen, le fog volumétrique et la végétation pour obtenir un rendu photographique. Une petite maison bleue perchée dans le décor apporte l'échelle humaine et une touche poétique à la scène.",
 
   resultats:
-    "Cinématique photoréaliste de paysages montagneux produite intégralement sous UE5. Maîtrise du pipeline complet sculpt terrain → texturing → éclairage atmosphérique → rendu cinématique. Projet validé en M2DD, avec des retours positifs sur la qualité du réalisme atteint et la poésie de la mise en scène.",
+    "Cinématique photoréaliste produite entièrement sous UE5, validée en M2DD avec des retours positifs. Le projet couvre l'ensemble du pipeline, de la génération du terrain au rendu cinématique final.",
 };
 // ─────────────────────────────────────────────────────────────────────────────
 

@@ -29,13 +29,13 @@ const PROJECT = {
   desc: "Installation visuelle 3D rétro-futuriste conçue pour un événement digital. Un univers synthétique habité de lumières néon et de matériaux PBR réfléchissants, rendu en temps réel sous Unreal Engine 5.",
 
   contexte:
-    "Création d'un environnement 3D immersif pour un événement digital. Le concept Retroverse s'inspire de l'esthétique rétro-futuriste des années 80 — grilles néon, espaces infinis, lumières synthétiques — retranscrite avec la précision du rendu temps réel d'Unreal Engine 5. L'enjeu était de créer une atmosphère forte et immédiatement reconnaissable, capable d'habiller l'identité visuelle d'un événement entier.",
+    "Environnement 3D conçu pour un événement digital, inspiré de l'esthétique rétro-futuriste des années 80 : grilles néon, espaces infinis, lumières synthétiques. Je voulais construire une atmosphère forte et immédiatement reconnaissable, capable de porter l'identité visuelle de l'événement.",
 
   contribution:
-    "Direction artistique complète de l'environnement : création de shaders néon personnalisés, travail sur les matériaux PBR réfléchissants et les effets de profondeur atmosphérique. Mise en place de l'éclairage Lumen avec effets de bloom, glow et réflexions volumétriques pour une ambiance nocturne synthétique. Animation de caméra cinématique pour une traversée immersive de l'espace rétro-futuriste.",
+    "J'ai réalisé la direction artistique complète avec des shaders néon personnalisés, des matériaux PBR réfléchissants et des effets de profondeur atmosphérique. L'éclairage Lumen a été travaillé avec bloom, glow et réflexions volumétriques pour une ambiance nocturne synthétique. La caméra animée guide le regard dans une traversée de l'espace.",
 
   resultats:
-    "Expérience visuelle déployée dans le cadre d'un événement digital. L'esthétique Retroverse a créé une identité visuelle cohérente et mémorable, avec un contraste marqué entre les références nostalgiques des années 80 et la technologie de rendu de pointe d'UE5. Projet valorisé sur Behance.",
+    "L'esthétique Retroverse a donné une identité visuelle cohérente à l'événement, jouant sur le contraste entre références années 80 et technologie UE5. Projet visible sur Behance.",
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
