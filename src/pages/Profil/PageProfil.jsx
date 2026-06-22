@@ -11,9 +11,9 @@ export default function PageProfil({ isMobile, isTablet, navigate }) {
   ];
 
   const stats = [
-    { value: "4+",  label: "Années d'XP" },
-    { value: "20+", label: "Projets livrés" },
-    { value: "10+", label: "Clients" },
+    { value: "Lv.3",  label: "Niveaux d'XP" },
+    { value: "20+", label: "" },
+    { value: "10+", label: "" },
   ];
 
   return (

@@ -14,7 +14,7 @@ const PROJECT = {
   category: "Design d'Innovation",
   year:     "2023",
   accent:   "#D4A574",
-  role:     "Lead Designer",
+  role:     "Project Manager",
   team:     "20 personnes",
   duration: "2 semaines",
   lien:     "https://www.behance.net/gallery/178570041/CanalU",
@@ -33,6 +33,9 @@ const PROJECT = {
     { label: "Gestion de projet",    cat: "domain" },
     { label: "Unreal Engine 5",      cat: "tool"   },
     { label: "Blender",              cat: "tool"   },
+    { label: "Photoshop",            cat: "tool"   },
+    { label: "Illustrator",          cat: "tool"   },
+    { label: "Figma",                cat: "tool"   },
   ],
 
   desc: "Plateforme de Streaming innovante, immersive, participative & interactive pour Canal+",

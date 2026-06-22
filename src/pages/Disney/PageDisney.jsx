@@ -15,8 +15,7 @@ const PROJECT = {
   year:     "2023",
   accent:   "#D4A574",
   role:     "Project Lead",
-  team:     "12 personnes",
-  duration: "8 mois",
+  team:     "2 personnes",
   lien:     null, // Ajoute un lien Behance ou site si tu en as un
 
   image: "/projets/disney/cover.jpg",
@@ -34,9 +33,10 @@ const PROJECT = {
     { label: "Figma",              cat: "tool"   },
     { label: "Photoshop",          cat: "tool"   },
     { label: "InDesign",           cat: "tool"   },
+    { label: "Illustrator",        cat: "tool"   },
   ],
 
-  desc: "Supports print & digitaux pour Disney Hotels : jeu de bingo, livret d'activités et assets web. Project Lead sur 8 mois avec une équipe de 12.",
+  desc: "Supports print & digitaux pour Disney Hotels : jeu de bingo, livret d'activités et assets web. Project Lead sur 8 mois avec une équipe de 2.",
 
   contexte:
     "Disney Hotels cherchait à enrichir l'expérience de ses clients en proposant des supports créatifs à l'effigie de ses personnages emblématiques. L'objectif : concevoir une gamme de supports print et digitaux, jeu de bingo, livret d'activités, assets weben strict respect de la charte graphique Disney, tout en apportant une fraîcheur visuelle adaptée à un public familial. Le défi principal résidait dans les contraintes de validation propres à Disney : cycles longs, exigences élevées sur l'usage des personnages et des couleurs de marque, et nécessité de livrer des fichiers prêts à l'impression pour plusieurs formats.",
