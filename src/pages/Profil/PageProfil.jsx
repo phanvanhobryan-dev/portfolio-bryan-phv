@@ -8,7 +8,7 @@ export default function PageProfil({ isMobile, isTablet, navigate }) {
   const contactItems = [
     { icon: "◉", label: "Numéros",   value: PROFIL.phone },
     { icon: "◆", label: "Email",     value: PROFIL.email,     href: `mailto:${PROFIL.email}` },
-    { icon: "⬢", label: "LinkedIn",  value: PROFIL.linkedin,  href: "https://www.linkedin.com/in/bryan-phan-van-ho-6bbb931b3/" },
+    { icon: "⬢", label: "LinkedIn",  value: PROFIL.linkedin,  href: `https://www.linkedin.com/in/${PROFIL.linkedin}/` },
     { icon: "★", label: "Instagram", value: PROFIL.instagram, href: "https://www.instagram.com/tenshi.blossom/" },
   ];
 

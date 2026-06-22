@@ -68,7 +68,7 @@ export default function Header({ page, navigate, isMobile }) {
           </svg>
           {!isMobile && (
             <span style={{ fontFamily: FONT_BODY, fontSize: 12, color: C.gold, letterSpacing: 2.5, fontWeight: 700, textTransform: "uppercase" }}>
-              Bryan PHV
+              Bryan PVH
             </span>
           )}
         </button>
