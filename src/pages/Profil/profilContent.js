@@ -12,17 +12,17 @@ export const PROFIL = {
     "Mon approche se situe au croisement du design et de la gestion de projet : je conçois des expériences mémorables tout en pilotant les équipes créatives pour livrer dans les délais et avec impact. Je sers de pont entre les équipes métiers, techniques et marketing.",
 
   bio3:
-    "Français natif, anglais professionnel (B1). Basé à Paris.",
+    "Français natif, anglais professionnel (B1).",
 
   // ── Stats ──────────────────────────────────────────────────────────────────
   stat1Value: "Lv.3",
   stat1Label: "Niveaux d'XP",
 
-  stat2Value: "20+",
-  stat2Label: "Projets réalisés",
+  stat2Value: "Chef de projet digital & marketing",
+  stat2Label: "Classe",
 
-  stat3Value: "10+",
-  stat3Label: "Clients accompagnés",
+  stat3Value: "Chercheur innovation & de soluetions",
+  stat3Label: "Spécialités",
 
   // ── Contact ────────────────────────────────────────────────────────────────
   phone:     "06.14.28.19.09, France",
