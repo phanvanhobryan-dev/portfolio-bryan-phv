@@ -19,15 +19,15 @@ const TOOL_TAGS = [
 const CATEGORIES = [
   {
     icon: "◆", title: "Design & Création", color: "#FBBEB4",
-    items: ["Direction artistique", "UI/UX Design", "Création de contenus visuels", "3D & Motion design", "Illustration", "Production photo / vidéo"],
+    items: ["Direction artistique", "UI/UX Design", "Création de contenus visuels", "3D & Motion design", "Production photo / vidéo"],
   },
   {
     icon: "⬢", title: "Gestion de projet", color: "#D4A574",
-    items: ["Pilotage d'équipes multi-profils", "Planification & livrables", "Définition des budgets & ressources", "Coordination créative", "Gestion des priorités", "Interface métier / technique / marketing"],
+    items: ["Pilotage d'équipes multi-profils", "Planification & livrables", "Définition des budgets & ressources", "Coordination créative", "Interface métier / technique / marketing"],
   },
   {
     icon: "★", title: "Marketing & Digital", color: "#FFD700",
-    items: ["Stratégie marketing multicanale", "Campagnes e-mailing & Ads", "SEO & acquisition", "Social media & culture plateformes", "Data & rapports de performance", "Digitalisation de systèmes"],
+    items: ["Stratégie marketing multicanale", "Campagnes e-mailing & Ads", "Social media & culture plateformes", "Data & rapports de performance", "Digitalisation de systèmes"],
   },
 ];
 

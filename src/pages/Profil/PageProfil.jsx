@@ -77,11 +77,11 @@ export default function PageProfil({ isMobile, isTablet, navigate }) {
             </div>
 
             {/* Stats */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16, marginTop: 40, paddingTop: 32, borderTop: "1px solid rgba(212,165,116,.2)" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 12, marginTop: 40, paddingTop: 32, borderTop: "1px solid rgba(212,165,116,.2)" }}>
               {stats.map(s => (
-                <div key={s.label}>
-                  <div style={{ fontFamily: FONT_DISPLAY, fontSize: 40, color: C.gold, lineHeight: 1 }}>{s.value}</div>
-                  <div style={{ fontFamily: FONT_BODY, fontSize: 10, letterSpacing: 2, color: "rgba(251,190,180,.55)", textTransform: "uppercase", marginTop: 6, fontWeight: 600 }}>{s.label}</div>
+                <div key={s.label} style={{ padding: "14px 16px", background: "rgba(26,31,56,.4)", border: "1px solid rgba(212,165,116,.15)", borderRadius: 6 }}>
+                  <div style={{ fontFamily: FONT_BODY, fontSize: 9, letterSpacing: 2, color: C.gold, textTransform: "uppercase", fontWeight: 700, marginBottom: 6 }}>{s.label}</div>
+                  <div style={{ fontFamily: FONT_BODY, fontSize: 13, color: C.peach, fontWeight: 600, lineHeight: 1.4 }}>{s.value}</div>
                 </div>
               ))}
             </div>
