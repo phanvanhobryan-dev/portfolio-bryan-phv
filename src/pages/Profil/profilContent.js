@@ -15,14 +15,14 @@ export const PROFIL = {
     "Français natif, anglais professionnel (B1).",
 
   // ── Stats ──────────────────────────────────────────────────────────────────
-  stat1Value: "Lv.3",
-  stat1Label: "Niveaux d'XP",
+  stat1Value: "Chef de projet digital & marketing",
+  stat1Label: "Classe",
 
-  stat2Value: "Chef de projet digital & marketing",
-  stat2Label: "Classe",
+  stat2Value: "Chercheur d'innovations & de solutions",
+  stat2Label: "Spécialisation",
 
-  stat3Value: "Chercheur innovation & de soluetions",
-  stat3Label: "Spécialités",
+  stat3Value: "Curieux & Social",
+  stat3Label: "Nature",
 
   // ── Contact ────────────────────────────────────────────────────────────────
   phone:     "06.14.28.19.09, France",
