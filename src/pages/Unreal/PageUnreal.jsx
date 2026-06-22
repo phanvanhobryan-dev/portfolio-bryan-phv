@@ -5,17 +5,17 @@ import CornerOrnaments from "../../components/CornerOrnaments/CornerOrnaments";
 const VIDEOS = [
   {
     id: "pJ_CZmqbvvg",
-    title: "Unreal Engine 5 — Séquence 01",
+    title: "Unreal Engine 5 :Séquence 01",
     desc: "Rendu architectural temps réel",
   },
   {
     id: "u_IxNJnyuwI",
-    title: "Unreal Engine 5 — Séquence 02",
+    title: "Unreal Engine 5 :Séquence 02",
     desc: "Éclairage Lumen & matériaux PBR",
   },
   {
     id: "ej5401UoiH4",
-    title: "Unreal Engine 5 — Séquence 03",
+    title: "Unreal Engine 5 :Séquence 03",
     desc: "Animation & environnement 3D",
   },
 ];

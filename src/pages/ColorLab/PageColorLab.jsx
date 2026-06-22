@@ -102,10 +102,10 @@ export default function PageColorLab({ isMobile, navigate }) {
     const isAnal   = hd < 40;
     const isTri    = (hd > 100 && hd < 140) || (hd > 220 && hd < 260);
     const hLabel   = isCompl ? "Complémentaires" : isAnal ? "Analogues" : isTri ? "Triadiques" : "Contraste libre";
-    const hDesc    = isCompl ? "Contraste maximal entre fond et accent — très percutant et mémorable."
-      : isAnal  ? "Palette douce et cohérente — ambiance élégante et reposante."
-      : isTri   ? "Équilibre dynamique sans agressivité — combo vivant."
-      : "Combo original — vérifiez la cohérence globale visuellement.";
+    const hDesc    = isCompl ? "Contraste maximal entre fond et accent, très percutant et mémorable."
+      : isAnal  ? "Palette douce et cohérente, ambiance élégante et reposante."
+      : isTri   ? "Équilibre dynamique sans agressivité, combo vivant."
+      : "Combo original, vérifiez la cohérence globale visuellement.";
 
     const t1 = fontType(font1), t2 = fontType(font2), t3 = fontType(font3);
     const gp = t1 !== t2, g3 = !f3on || (t3 !== t2 && t3 !== t1);
@@ -123,15 +123,15 @@ export default function PageColorLab({ isMobile, navigate }) {
     const noteA = Math.min((caN / 21) * 10, 10).toFixed(1);
     if (ctN >= 7) pros.push(`Lisibilité texte : Excellente (note ${noteT}/10)`);
     else if (ctN >= 4.5) pros.push(`Lisibilité texte : Bonne (note ${noteT}/10)`);
-    else cons.push(`Lisibilité texte insuffisante (note ${noteT}/10) — augmente le contraste entre texte et fond`);
+    else cons.push(`Lisibilité texte insuffisante (note ${noteT}/10), augmente le contraste entre texte et fond`);
     if (caN >= 4.5) pros.push(`Lisibilité accent : Bonne (note ${noteA}/10)`);
-    else cons.push(`Accent peu lisible sur fond (note ${noteA}/10) — choisis une couleur d'accent plus contrastée`);
-    if (isCompl) pros.push("Couleurs complémentaires : fort contraste naturel");
-    if (isAnal)  pros.push("Palette analogique : harmonie douce et cohérente");
-    if (gp) pros.push(`Pairing P1×P2 : ${t1} × ${t2} — bon contraste stylistique`);
-    else    cons.push(`P1 et P2 du même type (${t1}) — la hiérarchie visuelle est réduite`);
-    if (f3on && g3)  pros.push("Trio de polices cohérent — 3 niveaux hiérarchiques clairs");
-    if (f3on && !g3) cons.push("P3 trop proche de P1 ou P2 — le trio manque de contraste");
+    else cons.push(`Accent peu lisible sur fond (note ${noteA}/10), choisis une couleur d'accent plus contrastée`);
+    if (isCompl) pros.push("Couleurs complémentaires, fort contraste naturel");
+    if (isAnal)  pros.push("Palette analogique, harmonie douce et cohérente");
+    if (gp) pros.push(`Pairing P1×P2 : ${t1} × ${t2}, bon contraste stylistique`);
+    else    cons.push(`P1 et P2 du même type (${t1}), la hiérarchie visuelle est réduite`);
+    if (f3on && g3)  pros.push("Trio de polices cohérent, 3 niveaux hiérarchiques clairs");
+    if (f3on && !g3) cons.push("P3 trop proche de P1 ou P2, le trio manque de contraste");
     if (isDark) pros.push("Fond sombre : réduit la fatigue visuelle en lecture longue");
 
     setAnalysis({ ct, ca, ctN, caN, tags, hLabel, hDesc, t1, t2, t3, gp, g3, pros, cons });
@@ -294,7 +294,7 @@ export default function PageColorLab({ isMobile, navigate }) {
                       ? { txt: "Bon",         desc: "Lisible confortablement dans la majorité des contextes",  color: "#7CFC00", bg: "rgba(124,252,0,0.12)" }
                       : n >= 3
                       ? { txt: "Limite",      desc: "Acceptable pour les grands textes uniquement (18px+)",   color: "#D4A574", bg: "rgba(212,165,116,0.12)" }
-                      : { txt: "Insuffisant", desc: "Trop peu de contraste — difficile à lire pour beaucoup", color: "#E57373", bg: "rgba(229,115,115,0.12)" };
+                      : { txt: "Insuffisant", desc: "Trop peu de contraste, difficile à lire pour beaucoup", color: "#E57373", bg: "rgba(229,115,115,0.12)" };
                     return (
                       <div key={label} style={{ marginBottom: 14 }}>
                         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
@@ -327,7 +327,7 @@ export default function PageColorLab({ isMobile, navigate }) {
                     <strong style={{ color: C.peach }}>{font2}</strong>
                     <span style={{ color: "rgba(251,190,180,0.5)", fontSize: 11 }}>({analysis.t2})</span>
                     <span style={{ fontFamily: FONT_BODY, fontSize: 9, padding: "2px 7px", background: analysis.gp ? "rgba(124,252,0,0.12)" : "rgba(212,165,116,0.12)", border: `1px solid ${analysis.gp ? "#7CFC0050" : "rgba(212,165,116,0.4)"}`, borderRadius: 2, color: analysis.gp ? "#7CFC00" : C.gold, letterSpacing: 1, fontWeight: 700 }}>
-                      {analysis.gp ? "Types différents — bon contraste" : "Même type — moins de hiérarchie"}
+                      {analysis.gp ? "Types différents, bon contraste" : "Même type, moins de hiérarchie"}
                     </span>
                   </div>
                   {f3on && (
@@ -336,7 +336,7 @@ export default function PageColorLab({ isMobile, navigate }) {
                       <strong style={{ color: C.peach }}>{font3}</strong>
                       <span style={{ color: "rgba(251,190,180,0.5)", fontSize: 11 }}>({analysis.t3})</span>
                       <span style={{ fontFamily: FONT_BODY, fontSize: 9, padding: "2px 7px", background: analysis.g3 ? "rgba(124,252,0,0.12)" : "rgba(212,165,116,0.12)", border: `1px solid ${analysis.g3 ? "#7CFC0050" : "rgba(212,165,116,0.4)"}`, borderRadius: 2, color: analysis.g3 ? "#7CFC00" : C.gold, letterSpacing: 1, fontWeight: 700 }}>
-                        {analysis.g3 ? "Trio cohérent — 3 niveaux distincts" : "Trop similaire à P1 ou P2"}
+                        {analysis.g3 ? "Trio cohérent, 3 niveaux distincts" : "Trop similaire à P1 ou P2"}
                       </span>
                     </div>
                   )}
