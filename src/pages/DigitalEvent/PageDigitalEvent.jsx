@@ -191,66 +191,74 @@ export default function PageDigitalEvent({ isMobile, isTablet, navigate }) {
               </div>
 
               <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2,1fr)" : "repeat(3,1fr)", gap: 12 }}>
-                {ATELIERS.map((atelier) => (
-                  <a
-                    key={atelier.num}
-                    href={atelier.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ textDecoration: "none", display: "block", position: "relative", borderRadius: 6, overflow: "hidden", border: atelier.studio ? `1px solid rgba(212,165,116,.4)` : "1px solid rgba(212,165,116,.15)", cursor: "pointer" }}
-                  >
-                    {/* Affiche */}
-                    <div style={{ aspectRatio: "2/3", overflow: "hidden", position: "relative" }}>
-                      <img
-                        src={atelier.affiche}
-                        alt={atelier.name}
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .4s ease" }}
-                        onMouseOver={e => e.currentTarget.style.transform = "scale(1.05)"}
-                        onMouseOut={e => e.currentTarget.style.transform = "scale(1)"}
-                      />
-                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, rgba(11,13,26,.85) 100%)" }} />
+                {ATELIERS.map((atelier) => {
+                  const hovered = hoveredAtelier === atelier.num;
+                  return (
+                    <a
+                      key={atelier.num}
+                      href={atelier.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onMouseEnter={() => setHoveredAtelier(atelier.num)}
+                      onMouseLeave={() => setHoveredAtelier(null)}
+                      style={{
+                        textDecoration: "none", display: "block", position: "relative",
+                        borderRadius: 6, overflow: "hidden",
+                        border: hovered
+                          ? `1px solid rgba(212,165,116,.7)`
+                          : atelier.studio ? `1px solid rgba(212,165,116,.4)` : "1px solid rgba(212,165,116,.15)",
+                        cursor: "pointer",
+                        transform: hovered ? "translateY(-4px)" : "none",
+                        boxShadow: hovered ? "0 12px 32px rgba(212,165,116,.2)" : "none",
+                        transition: "transform .25s ease, box-shadow .25s ease, border-color .25s ease",
+                      }}
+                    >
+                      {/* Affiche */}
+                      <div style={{ aspectRatio: "2/3", overflow: "hidden", position: "relative" }}>
+                        <img
+                          src={atelier.affiche}
+                          alt={atelier.name}
+                          style={{
+                            width: "100%", height: "100%", objectFit: "cover", display: "block",
+                            transform: hovered ? "scale(1.06)" : "scale(1)",
+                            transition: "transform .4s ease",
+                          }}
+                        />
+                        <div style={{
+                          position: "absolute", inset: 0,
+                          background: hovered
+                            ? "linear-gradient(to bottom, transparent 30%, rgba(11,13,26,.92) 100%)"
+                            : "linear-gradient(to bottom, transparent 40%, rgba(11,13,26,.85) 100%)",
+                          transition: "background .25s ease",
+                        }} />
 
-                      {/* Numéro */}
-                      <div style={{ position: "absolute", top: 10, left: 10, fontFamily: FONT_BODY, fontSize: 9, letterSpacing: 2, color: atelier.studio ? p.accent : "rgba(251,190,180,.5)", fontWeight: 700 }}>
-                        NO.{atelier.num}
-                      </div>
-
-                      {/* Badge studio */}
-                      {atelier.studio && (
-                        <div style={{ position: "absolute", top: 10, right: 10, fontFamily: FONT_BODY, fontSize: 8, letterSpacing: 1.5, color: C.bg, background: p.accent, borderRadius: 3, padding: "3px 7px", fontWeight: 700, textTransform: "uppercase" }}>
-                          Studio
+                        {/* Numéro */}
+                        <div style={{ position: "absolute", top: 10, left: 10, fontFamily: FONT_BODY, fontSize: 9, letterSpacing: 2, color: atelier.studio ? p.accent : "rgba(251,190,180,.5)", fontWeight: 700 }}>
+                          NO.{atelier.num}
                         </div>
-                      )}
 
-                      {/* Nom */}
-                      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "10px 12px" }}>
-                        <div style={{ fontFamily: FONT_DISPLAY, fontSize: 13, color: C.peach, fontStyle: "italic", lineHeight: 1.2, marginBottom: 3 }}>{atelier.name}</div>
-                        <div style={{ fontFamily: FONT_BODY, fontSize: 9, color: "rgba(251,190,180,.5)", letterSpacing: 1 }}>{atelier.genre}</div>
+                        {/* Badge studio */}
+                        {atelier.studio && (
+                          <div style={{ position: "absolute", top: 10, right: 10, fontFamily: FONT_BODY, fontSize: 8, letterSpacing: 1.5, color: C.bg, background: p.accent, borderRadius: 3, padding: "3px 7px", fontWeight: 700, textTransform: "uppercase" }}>
+                            Studio
+                          </div>
+                        )}
+
+                        {/* Nom + flèche au hover */}
+                        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "10px 12px" }}>
+                          <div style={{ fontFamily: FONT_DISPLAY, fontSize: 13, color: C.peach, fontStyle: "italic", lineHeight: 1.2, marginBottom: 3, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                            <span>{atelier.name}</span>
+                            <span style={{ fontSize: 11, opacity: hovered ? 1 : 0, transform: hovered ? "translateX(0)" : "translateX(-6px)", transition: "opacity .2s ease, transform .2s ease", color: p.accent }}>→</span>
+                          </div>
+                          <div style={{ fontFamily: FONT_BODY, fontSize: 9, color: "rgba(251,190,180,.5)", letterSpacing: 1 }}>{atelier.genre}</div>
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                ))}
+                    </a>
+                  );
+                })}
               </div>
             </div>
 
-            {/* ── GALERIE ── */}
-            <div style={{ fontFamily: FONT_BODY, fontSize: 10, letterSpacing: 2.5, color: p.accent, textTransform: "uppercase", fontWeight: 700, marginBottom: 16 }}>
-              Galerie backstage · {GALLERY_IMAGES.length} visuels
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {GALLERY_IMAGES.map((src, i) => (
-                <GalleryItem
-                  key={i}
-                  src={src}
-                  index={i}
-                  isFirst={i === 0}
-                  isVid={isVideo(src)}
-                  isEmb={isEmbed(src)}
-                  accent={p.accent}
-                  onLightbox={() => { if (!isMedia(src)) setLightbox(i); }}
-                />
-              ))}
-            </div>
           </div>
 
           {/* ── Sidebar ── */}
