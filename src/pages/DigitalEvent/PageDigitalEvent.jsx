@@ -6,54 +6,130 @@ import GalleryItem from "../../components/GalleryItem/GalleryItem";
 import Lightbox from "../../components/Lightbox/Lightbox";
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  DONNÉES DU PROJET  ← modifie tout ici !
+//  DONNÉES DU PROJET
 // ─────────────────────────────────────────────────────────────────────────────
+const BASE = "https://esd-digital-event.com/2026/wp-content/uploads/2026/02/";
+
 const PROJECT = {
   id:       3,
   title:    "Digital Event",
-  category: "Application mobile",
-  year:     "2023",
+  category: "Coordination d'événement",
+  year:     "2026",
   accent:   "#D4A574",
-  role:     "Product Designer",
-  team:     "5 personnes",
-  duration: "4 mois",
-  lien:     null, // Ajoute un lien Behance ou site si tu en as un
+  role:     "Coordinateur technique & logistique",
+  team:     "7 ateliers · ~200 étudiants",
+  duration: "1 semaine intensive",
+  lien:     "https://esd-digital-event.com/2026/",
 
-  image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1200&q=85",
-  images: [
-    "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1200&q=85",
-    "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=85",
-    "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=1200&q=85",
-    "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1200&q=85",
-    "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&q=85",
-  ],
+  image: BASE + "flipCreativeTech-Photo-2.jpg",
 
   tags: [
-    { label: "UI/UX",          cat: "domain" },
-    { label: "Motion design",  cat: "domain" },
-    { label: "Figma",          cat: "tool"   },
-    { label: "After Effects",  cat: "tool"   },
+    { label: "Gestion de projet",    cat: "domain" },
+    { label: "Coordination",         cat: "domain" },
+    { label: "Conseil technique",    cat: "domain" },
+    { label: "Conseil créatif",      cat: "domain" },
+    { label: "Studio Podcast",       cat: "tool"   },
+    { label: "Studio Vidéo",         cat: "tool"   },
+    { label: "Studio Photo",         cat: "tool"   },
   ],
 
-  desc: "App de méditation immersive avec sound design custom. Coordination de 5 personnes.",
+  desc: "L'ESD Digital Event est une semaine intensive durant laquelle les étudiants de l'école se répartissent en 7 ateliers créatifs et techniques. J'y ai assuré la coordination logistique de l'ensemble des ateliers, la gestion des réservations de studios, la supervision du matériel et l'accompagnement des étudiants.",
 
-  // ↓ Remplace ces placeholders par ton vrai contenu
   contexte:
-    "[Décris ici le contexte du projet Digital Event : brief, enjeux, public cible, contraintes…]",
+    "L'ESD Digital Event 2026 est une semaine de production intensive où plus de 200 étudiants travaillent en parallèle sur 7 ateliers : Creative Technologies, Photo Lab, Interface Web, Podcast & Cinéphonie, Ciné Lab, Immersive Games et Team Orga. Chaque atelier produit un ou plusieurs projets finaux présentés lors d'une soirée de clôture. L'événement nécessite une organisation logistique rigoureuse pour que tous les groupes puissent travailler simultanément dans de bonnes conditions.",
 
   contribution:
-    "[Décris ici ta contribution : design des écrans, animations, coordination de l'équipe de 5…]",
+    "J'ai pris en charge la logistique globale des différents ateliers : planification des créneaux d'occupation des espaces, gestion des réservations des trois studios (podcast, vidéo et photo) pour assurer une rotation fluide entre les groupes, et vérification du bon fonctionnement de l'ensemble du matériel technique avant et pendant la semaine. En parallèle, j'ai accompagné les étudiants sur leurs projets en leur apportant des conseils techniques et créatifs au fil de leurs besoins.",
 
   resultats:
-    "[Décris ici les résultats : retours utilisateurs, métriques d'engagement, retour client…]",
+    "La semaine s'est déroulée sans incident majeur grâce à une coordination en amont rigoureuse. Les 7 ateliers ont tous livré leurs projets dans les délais pour la soirée finale. Les étudiants ont pu travailler dans des conditions optimales, avec un accès fluide aux studios et au matériel. Les retours des intervenants et des étudiants ont été très positifs sur l'organisation et la disponibilité de l'encadrement.",
 };
+
+// ─── Affiches des 7 ateliers ──────────────────────────────────────────────────
+const ATELIERS = [
+  {
+    num: "01",
+    name: "Creative Technologies",
+    desc: "Touch Designer & Video Mapping",
+    genre: "Science-fiction",
+    affiche: BASE + "Affiche_CreativeTechnologies.jpg",
+    url: "https://esd-digital-event.com/2026/atelier-creative-technologies",
+    studio: false,
+  },
+  {
+    num: "02",
+    name: "Photo Lab",
+    desc: "Lightroom & Photoshop",
+    genre: "Comédie",
+    affiche: BASE + "Affiche_PhotoLab.jpg",
+    url: "https://esd-digital-event.com/2026/atelier-photo-lab",
+    studio: true,
+  },
+  {
+    num: "03",
+    name: "Interface Web",
+    desc: "Design d'interface & développement",
+    genre: "Drame",
+    affiche: BASE + "Affiche_InterfaceWeb.jpg",
+    url: "https://esd-digital-event.com/2026/atelier-interface-web",
+    studio: false,
+  },
+  {
+    num: "04",
+    name: "Podcast & Cinéphonie",
+    desc: "Adobe Audition · Premiere Pro",
+    genre: "Documentaire",
+    affiche: BASE + "Affiche_PodcastCinephonie.jpg",
+    url: "https://esd-digital-event.com/2026/atelier-podcast-cinephonie",
+    studio: true,
+  },
+  {
+    num: "05",
+    name: "Ciné Lab",
+    desc: "DaVinci Resolve · Premiere Pro",
+    genre: "Thriller",
+    affiche: BASE + "Affiche_cineLab.jpg",
+    url: "https://esd-digital-event.com/2026/atelier-cine-lab",
+    studio: true,
+  },
+  {
+    num: "06",
+    name: "Immersive Games",
+    desc: "Game design & expérience interactive",
+    genre: "Escape Game",
+    affiche: BASE + "Affiche_EscapeGame.jpg",
+    url: "https://esd-digital-event.com/2026/atelier-immersive-games",
+    studio: false,
+  },
+  {
+    num: "07",
+    name: "Team Orga",
+    desc: "Organisation & communication",
+    genre: "Événementiel",
+    affiche: BASE + "Affiche_TeamOrga.jpg",
+    url: "https://esd-digital-event.com/2026/atelier-team-orga",
+    studio: false,
+  },
+];
+
+// ─── Galerie backstage ────────────────────────────────────────────────────────
+const GALLERY_IMAGES = [
+  BASE + "flipCreativeTech-Photo-2.jpg",
+  BASE + "Podcast-Photo-7.jpg",
+  BASE + "PhotoLab-Photo-1.jpg",
+  BASE + "Cinelabe-Photo-4.jpg",
+  BASE + "CreativeTech-Photo-5.jpg",
+  BASE + "Podcast-Photo-1.jpg",
+  BASE + "Cinelabe-Photo-1.jpg",
+  BASE + "PhotoLab-Photo-5.jpg",
+];
+
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function PageDigitalEvent({ isMobile, isTablet, navigate }) {
   const [lightbox, setLightbox] = useState(null);
   const p = PROJECT;
 
-  const imgs    = p.images;
   const isVideo = (src) => src.endsWith(".mp4") || src.endsWith(".webm");
   const isEmbed = (src) => src.includes("youtube.com") || src.includes("vimeo.com");
   const isMedia = (src) => isVideo(src) || isEmbed(src);
@@ -66,15 +142,17 @@ export default function PageDigitalEvent({ isMobile, isTablet, navigate }) {
     { label: "Durée",     value: p.duration },
   ];
 
+  const studiosGérés = ATELIERS.filter(a => a.studio).map(a => a.name).join(", ");
+
   return (
     <main style={{ position: "relative", zIndex: 1, minHeight: "100vh" }}>
       {lightbox !== null && (
-        <Lightbox images={imgs} startIndex={lightbox} onClose={() => setLightbox(null)} />
+        <Lightbox images={GALLERY_IMAGES} startIndex={lightbox} onClose={() => setLightbox(null)} />
       )}
 
       {/* ── HERO ── */}
       <div style={{ position: "relative", height: isMobile ? "55vh" : "70vh", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${p.image})`, backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.4) saturate(0.7)", transform: "scale(1.05)" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${p.image})`, backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.35) saturate(0.7)", transform: "scale(1.05)" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 30%, #0B0D1A 100%)" }} />
 
         <button onClick={() => navigate("home")} style={{ position: "absolute", top: isMobile ? 90 : 100, left: isMobile ? 24 : 64, fontFamily: FONT_BODY, fontSize: 11, letterSpacing: 2.5, textTransform: "uppercase", fontWeight: 700, color: C.peach, background: "rgba(11,13,26,0.6)", border: `1px solid ${C.border}`, borderRadius: 4, padding: "10px 18px", backdropFilter: "blur(12px)", display: "inline-flex", alignItems: "center", gap: 8, cursor: "pointer" }}>
@@ -83,7 +161,12 @@ export default function PageDigitalEvent({ isMobile, isTablet, navigate }) {
 
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: isMobile ? "0 24px 40px" : "0 64px 56px" }}>
           <div style={{ fontFamily: FONT_BODY, fontSize: 11, letterSpacing: 3, color: p.accent, textTransform: "uppercase", fontWeight: 700, marginBottom: 12 }}>{p.category} · {p.year}</div>
-          <h1 style={{ fontFamily: FONT_DISPLAY, fontSize: isMobile ? "clamp(40px,10vw,60px)" : "clamp(56px,8vw,96px)", fontWeight: 400, lineHeight: 0.95, color: C.peach, fontStyle: "italic", letterSpacing: "-0.025em" }}>{p.title}</h1>
+          <h1 style={{ fontFamily: FONT_DISPLAY, fontSize: isMobile ? "clamp(40px,10vw,60px)" : "clamp(56px,8vw,96px)", fontWeight: 400, lineHeight: 0.95, color: C.peach, fontStyle: "italic", letterSpacing: "-0.025em" }}>ESD {p.title}</h1>
+          {p.lien && (
+            <a href={p.lien} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 20, fontFamily: FONT_BODY, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700, color: p.accent, textDecoration: "none", borderBottom: `1px solid ${p.accent}50`, paddingBottom: 2 }}>
+              Voir le site de l'événement →
+            </a>
+          )}
         </div>
       </div>
 
@@ -93,19 +176,22 @@ export default function PageDigitalEvent({ isMobile, isTablet, navigate }) {
 
           {/* ── Colonne principale ── */}
           <div>
+
+            {/* À propos */}
             <div style={{ padding: "28px 32px", background: "rgba(26,31,56,0.5)", border: "1px solid rgba(212,165,116,0.2)", borderRadius: 8, backdropFilter: "blur(20px)", marginBottom: 40, position: "relative" }}>
               <CornerOrnaments color={p.accent} />
               <div style={{ fontFamily: FONT_BODY, fontSize: 10, letterSpacing: 2.5, color: p.accent, textTransform: "uppercase", fontWeight: 700, marginBottom: 14 }}>À propos du projet</div>
               <p style={{ fontFamily: FONT_BODY, fontSize: 16, lineHeight: 1.85, color: "rgba(251,190,180,.85)", margin: 0 }}>{p.desc}</p>
             </div>
 
+            {/* Détail & processus */}
             <div style={{ padding: "28px 32px", background: "rgba(26,31,56,0.5)", border: "1px solid rgba(212,165,116,0.2)", borderRadius: 8, backdropFilter: "blur(20px)", marginBottom: 40, position: "relative" }}>
               <CornerOrnaments color={p.accent} />
               <div style={{ fontFamily: FONT_BODY, fontSize: 10, letterSpacing: 2.5, color: p.accent, textTransform: "uppercase", fontWeight: 700, marginBottom: 24 }}>Détail &amp; processus</div>
               {[
-                { title: "Contexte",            value: p.contexte },
-                { title: "Ce que j'ai fait",    value: p.contribution },
-                { title: "Résultats & impact",  value: p.resultats },
+                { title: "Contexte",           value: p.contexte },
+                { title: "Ce que j'ai fait",   value: p.contribution },
+                { title: "Résultats & impact", value: p.resultats },
               ].map((section, idx) => (
                 <div key={section.title}>
                   {idx > 0 && <div style={{ height: 1, background: "rgba(212,165,116,.12)", marginBottom: 24 }} />}
@@ -117,18 +203,81 @@ export default function PageDigitalEvent({ isMobile, isTablet, navigate }) {
               ))}
             </div>
 
+            {/* ── ATELIERS ── */}
+            <div style={{ marginBottom: 40 }}>
+              <div style={{ fontFamily: FONT_BODY, fontSize: 10, letterSpacing: 2.5, color: p.accent, textTransform: "uppercase", fontWeight: 700, marginBottom: 6 }}>
+                Les 7 ateliers
+              </div>
+              <div style={{ fontFamily: FONT_BODY, fontSize: 12, color: "rgba(251,190,180,.45)", marginBottom: 20 }}>
+                Studios gérés : {studiosGérés}
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2,1fr)" : "repeat(3,1fr)", gap: 12 }}>
+                {ATELIERS.map((atelier) => (
+                  <a
+                    key={atelier.num}
+                    href={atelier.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: "none", display: "block", position: "relative", borderRadius: 6, overflow: "hidden", border: atelier.studio ? `1px solid rgba(212,165,116,.4)` : "1px solid rgba(212,165,116,.15)", cursor: "pointer" }}
+                  >
+                    {/* Affiche */}
+                    <div style={{ aspectRatio: "2/3", overflow: "hidden", position: "relative" }}>
+                      <img
+                        src={atelier.affiche}
+                        alt={atelier.name}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .4s ease" }}
+                        onMouseOver={e => e.currentTarget.style.transform = "scale(1.05)"}
+                        onMouseOut={e => e.currentTarget.style.transform = "scale(1)"}
+                      />
+                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, rgba(11,13,26,.85) 100%)" }} />
+
+                      {/* Numéro */}
+                      <div style={{ position: "absolute", top: 10, left: 10, fontFamily: FONT_BODY, fontSize: 9, letterSpacing: 2, color: atelier.studio ? p.accent : "rgba(251,190,180,.5)", fontWeight: 700 }}>
+                        NO.{atelier.num}
+                      </div>
+
+                      {/* Badge studio */}
+                      {atelier.studio && (
+                        <div style={{ position: "absolute", top: 10, right: 10, fontFamily: FONT_BODY, fontSize: 8, letterSpacing: 1.5, color: C.bg, background: p.accent, borderRadius: 3, padding: "3px 7px", fontWeight: 700, textTransform: "uppercase" }}>
+                          Studio
+                        </div>
+                      )}
+
+                      {/* Nom */}
+                      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "10px 12px" }}>
+                        <div style={{ fontFamily: FONT_DISPLAY, fontSize: 13, color: C.peach, fontStyle: "italic", lineHeight: 1.2, marginBottom: 3 }}>{atelier.name}</div>
+                        <div style={{ fontFamily: FONT_BODY, fontSize: 9, color: "rgba(251,190,180,.5)", letterSpacing: 1 }}>{atelier.genre}</div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* ── GALERIE ── */}
             <div style={{ fontFamily: FONT_BODY, fontSize: 10, letterSpacing: 2.5, color: p.accent, textTransform: "uppercase", fontWeight: 700, marginBottom: 16 }}>
-              Galerie · {imgs.length} visuel{imgs.length > 1 ? "s" : ""}
+              Galerie backstage · {GALLERY_IMAGES.length} visuels
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {imgs.map((src, i) => (
-                <GalleryItem key={i} src={src} index={i} isFirst={i === 0} isVid={isVideo(src)} isEmb={isEmbed(src)} accent={p.accent} onLightbox={() => { if (!isMedia(src)) setLightbox(i); }} />
+              {GALLERY_IMAGES.map((src, i) => (
+                <GalleryItem
+                  key={i}
+                  src={src}
+                  index={i}
+                  isFirst={i === 0}
+                  isVid={isVideo(src)}
+                  isEmb={isEmbed(src)}
+                  accent={p.accent}
+                  onLightbox={() => { if (!isMedia(src)) setLightbox(i); }}
+                />
               ))}
             </div>
           </div>
 
           {/* ── Sidebar ── */}
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+
             <div style={{ padding: "20px 24px", background: "rgba(26,31,56,0.5)", border: "1px solid rgba(212,165,116,0.2)", borderRadius: 8, backdropFilter: "blur(20px)" }}>
               <div style={{ fontFamily: FONT_BODY, fontSize: 10, letterSpacing: 2.5, color: "rgba(251,190,180,.5)", textTransform: "uppercase", fontWeight: 700, marginBottom: 12 }}>Domaines</div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
@@ -137,7 +286,7 @@ export default function PageDigitalEvent({ isMobile, isTablet, navigate }) {
             </div>
 
             <div style={{ padding: "20px 24px", background: "rgba(26,31,56,0.5)", border: "1px solid rgba(212,165,116,0.2)", borderRadius: 8, backdropFilter: "blur(20px)" }}>
-              <div style={{ fontFamily: FONT_BODY, fontSize: 10, letterSpacing: 2.5, color: "rgba(251,190,180,.5)", textTransform: "uppercase", fontWeight: 700, marginBottom: 12 }}>Outils</div>
+              <div style={{ fontFamily: FONT_BODY, fontSize: 10, letterSpacing: 2.5, color: "rgba(251,190,180,.5)", textTransform: "uppercase", fontWeight: 700, marginBottom: 12 }}>Studios gérés</div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                 {p.tags.filter(t => t.cat === "tool").map(t => <Tag key={t.label} label={t.label} cat={t.cat} />)}
               </div>
@@ -155,12 +304,24 @@ export default function PageDigitalEvent({ isMobile, isTablet, navigate }) {
               </div>
             </div>
 
+            {/* Lien site */}
+            {p.lien && (
+              <a
+                href={p.lien}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "14px", background: `rgba(212,165,116,.1)`, border: `1px solid rgba(212,165,116,.35)`, borderRadius: 6, fontFamily: FONT_BODY, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700, color: p.accent, textDecoration: "none", cursor: "pointer" }}
+              >
+                Voir le site →
+              </a>
+            )}
+
             <div style={{ display: "flex", gap: 8 }}>
               <button onClick={() => navigate("projet-2")} style={{ flex: 1, fontFamily: FONT_BODY, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700, color: C.peach, background: "rgba(26,31,56,0.5)", border: "1px solid rgba(212,165,116,0.2)", borderRadius: 4, padding: "12px 8px", display: "flex", alignItems: "center", justifyContent: "center", gap: 6, cursor: "pointer" }}>← Préc.</button>
               <button onClick={() => navigate("projet-4")} style={{ flex: 1, fontFamily: FONT_BODY, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700, color: C.peach, background: "rgba(26,31,56,0.5)", border: "1px solid rgba(212,165,116,0.2)", borderRadius: 4, padding: "12px 8px", display: "flex", alignItems: "center", justifyContent: "center", gap: 6, cursor: "pointer" }}>Suiv. →</button>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </main>
