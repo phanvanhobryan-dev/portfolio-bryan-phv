@@ -31,7 +31,7 @@ export default function PageProfil({ isMobile, isTablet, navigate }) {
               <img
                 src="/bryan-profile.jpg"
                 alt="Bryan Phan Van Ho"
-                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", display: "block" }}
               />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 65%, rgba(11,13,26,0.45) 100%)", pointerEvents: "none" }} />
               <CornerOrnaments />
