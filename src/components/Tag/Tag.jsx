@@ -9,13 +9,13 @@ export default function Tag({ label, cat }) {
 
   return (
     <span style={{
-      fontFamily: FONT_BODY, fontSize: 9, padding: "3px 8px",
+      fontFamily: FONT_BODY, fontSize: 11, padding: "5px 11px",
       background: `${cfg.color}12`, border: `0.5px solid ${cfg.color}55`,
       borderRadius: 2, color: cfg.color, letterSpacing: 1.5,
       textTransform: "uppercase", fontWeight: 700,
-      display: "inline-flex", alignItems: "center", gap: 4, whiteSpace: "nowrap",
+      display: "inline-flex", alignItems: "center", gap: 5, whiteSpace: "nowrap",
     }}>
-      <span style={{ fontSize: 6 }}>{cfg.icon}</span>{label}
+      <span style={{ fontSize: 7 }}>{cfg.icon}</span>{label}
     </span>
   );
 }
