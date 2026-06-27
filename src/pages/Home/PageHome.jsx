@@ -58,7 +58,7 @@ export default function PageHome({ isMobile, isTablet, navigate }) {
       {/* ── CARROUSEL ── */}
       <section style={{ padding: isMobile ? "0 0 80px" : "0 0 120px" }}>
         <div style={{ padding: isMobile ? "0 16px" : isTablet ? "0 40px" : "0 64px", maxWidth: 1400, margin: "0 auto" }}>
-          <RevealHeader label="02 · Autres travaux" title={<>Glisse pour <em>explorer.</em></>} sub="Drag → pour faire défiler" isMobile={isMobile} />
+          <RevealHeader label="02 · Travaux personnels" title={<>Glisse pour <em>explorer.</em></>} sub="Projet plus personnel qui me tiennent à coeur de vous montrer" isMobile={isMobile} />
         </div>
         <DragCarousel items={CAROUSEL} isMobile={isMobile} navigate={navigate} />
       </section>
